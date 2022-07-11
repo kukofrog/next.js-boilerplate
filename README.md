@@ -5,4 +5,5 @@
 - typescript
 - styled-components
 - color theme
-- i18next
+- dark mode
+- next-i18next
