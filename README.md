@@ -7,3 +7,5 @@
 - color theme
 - dark mode
 - next-i18next
+
+[DEMO](https://next-js-boilerplate-kuko.vercel.app/)

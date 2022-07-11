@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styled from 'styled-components';
 import useDarkMode from 'hooks/useDarkMode';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Header from 'components/Header';
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -72,7 +71,6 @@ const LocaleLink = styled.a`
 const Home: NextPage = props => {
   const { theme, setTheme } = useDarkMode();
   const { t } = useTranslation('home');
-  const router = useRouter();
 
   return (
     <>
@@ -80,6 +78,7 @@ const Home: NextPage = props => {
         <title>{'Next.js Boilerplate'}</title>
       </Head>
       <Container>
+        <Header />
         <Goddess src="https://i.imgur.com/DQaWmTF.jpg" />
         <TextBox>
           <h1>{t('title')}</h1>
@@ -90,9 +89,6 @@ const Home: NextPage = props => {
             {t('theme_msg')} {theme === 'light' ? '☀️' : '🌙'}
           </span>
         </ThemeButton>
-        <Link href="/" locale={router.locale === 'en' ? 'kr' : 'en'}>
-          <LocaleLink>{t('change-locale')}</LocaleLink>
-        </Link>
       </Container>
     </>
   );

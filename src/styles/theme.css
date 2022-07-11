@@ -5,7 +5,7 @@ body {
 }
 
 body[data-theme="dark"] {
-    --background: #111;
+    --background: #222;
     --text-primary: #fff;
     --text-secondary: #aaa;
 }
